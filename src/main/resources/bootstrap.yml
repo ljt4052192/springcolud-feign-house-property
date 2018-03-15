@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: springcolud-feign-house-property
+  cloud:
+    config:
+      label: master
+      profile: dev
+      #uri: http://localhost:8004/
+      discovery:
+        enabled: true
+        service-id: config-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+server:
+  port: ${port:8003}
+management:
+  security:
+    enabled: false
+
