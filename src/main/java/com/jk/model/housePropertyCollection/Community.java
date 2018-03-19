@@ -1,9 +1,11 @@
 package com.jk.model.housePropertyCollection;
 
-public class Community {
+import java.io.Serializable;
+
+public class Community  implements Serializable {
     private String id;
 
-    private Long tAId;
+    private Long taid;
 
     private String name;
 
@@ -15,12 +17,12 @@ public class Community {
         this.id = id == null ? null : id.trim();
     }
 
-    public Long gettAId() {
-        return tAId;
+    public Long getTaid() {
+        return taid;
     }
 
-    public void settAId(Long tAId) {
-        this.tAId = tAId;
+    public void setTaid(Long taid) {
+        this.taid = taid;
     }
 
     public String getName() {

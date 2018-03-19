@@ -1,9 +1,11 @@
 package com.jk.model.housePropertyCollection;
 
-public class HouseType {
+import java.io.Serializable;
+
+public class HouseType implements Serializable {
     private String id;
 
-    private String name;
+    private String housertypename;
 
     public String getId() {
         return id;
@@ -13,11 +15,11 @@ public class HouseType {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getName() {
-        return name;
+    public String getHousertypename() {
+        return housertypename;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setHousertypename(String housertypename) {
+        this.housertypename = housertypename;
     }
 }

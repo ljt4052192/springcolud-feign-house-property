@@ -1,9 +1,11 @@
 package com.jk.model.housePropertyCollection;
 
-public class SellHousePic {
+import java.io.Serializable;
+
+public class SellHousePic implements Serializable {
     private String id;
 
-    private String tSId;
+    private String tsid;
 
     private String url;
 
@@ -17,12 +19,12 @@ public class SellHousePic {
         this.id = id == null ? null : id.trim();
     }
 
-    public String gettSId() {
-        return tSId;
+    public String getTsid() {
+        return tsid;
     }
 
-    public void settSId(String tSId) {
-        this.tSId = tSId == null ? null : tSId.trim();
+    public void setTsid(String tsid) {
+        this.tsid = tsid;
     }
 
     public String getUrl() {

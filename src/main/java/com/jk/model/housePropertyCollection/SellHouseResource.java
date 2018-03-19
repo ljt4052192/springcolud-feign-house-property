@@ -1,11 +1,15 @@
 package com.jk.model.housePropertyCollection;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class SellHouseResource {
+public class SellHouseResource implements Serializable {
     private String id;
 
-    private String tEId;
+    private String teid;
 
     private String title;
 
@@ -26,7 +30,7 @@ public class SellHouseResource {
     private Long city;
 
     private Long county;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date buildingTime;
 
     private String roomType;
@@ -48,11 +52,159 @@ public class SellHouseResource {
     private String communityComplete;
 
     private String serviceIntroduce;
-
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date releaseTime;
 
     private String roomNum;
 
+ // 业务管理字段
+
+    //最小面积
+    private Double startArea;
+
+    //最大面积
+    private Double endArea;
+
+    /*和地区管理*/
+    private String areaprovince;
+
+    private String areacity;
+
+    private String areacounty;
+    /*和小区名字关联*/
+    private String name;
+    /*和房屋装修类型关联*/
+    private String decoratename;
+   /*和用户关联*/
+    private String username;
+   /*和房屋类型关联*/
+   private String housertypename;
+   /*和房屋图片关联*/
+   private String url;
+   /*和房屋图片类型关联*/
+   private Integer type;
+
+   /*时间用到的业务字段*/
+    /*开始时间*/
+    private  String  starttime;
+   /*结束时间*/
+    private  String  endtime;
+
+    /*省市县业务字段*/
+    private  String fullname ;
+
+
+    public Double getStartArea() {
+        return startArea;
+    }
+
+    public void setStartArea(Double startArea) {
+        this.startArea = startArea;
+    }
+
+    public Double getEndArea() {
+        return endArea;
+    }
+
+    public void setEndArea(Double endArea) {
+        this.endArea = endArea;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    public String getStarttime() {
+        return starttime;
+    }
+
+    public void setStarttime(String starttime) {
+        this.starttime = starttime;
+    }
+
+    public String getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(String endtime) {
+        this.endtime = endtime;
+    }
+
+    public String getAreaprovince() {
+        return areaprovince;
+    }
+
+    public void setAreaprovince(String areaprovince) {
+        this.areaprovince = areaprovince;
+    }
+
+    public String getAreacity() {
+        return areacity;
+    }
+
+    public void setAreacity(String areacity) {
+        this.areacity = areacity;
+    }
+
+    public String getAreacounty() {
+        return areacounty;
+    }
+
+    public void setAreacounty(String areacounty) {
+        this.areacounty = areacounty;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDecoratename() {
+        return decoratename;
+    }
+
+    public void setDecoratename(String decoratename) {
+        this.decoratename = decoratename;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getHousertypename() {
+        return housertypename;
+    }
+
+    public void setHousertypename(String housertypename) {
+        this.housertypename = housertypename;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
     public String getSellingPoint() {
         return sellingPoint;
@@ -94,12 +246,12 @@ public class SellHouseResource {
         this.id = id == null ? null : id.trim();
     }
 
-    public String gettEId() {
-        return tEId;
+    public String getTeid() {
+        return teid;
     }
 
-    public void settEId(String tEId) {
-        this.tEId = tEId == null ? null : tEId.trim();
+    public void setTeid(String teid) {
+        this.teid = teid;
     }
 
     public String getTitle() {
@@ -182,8 +334,13 @@ public class SellHouseResource {
         this.county = county;
     }
 
-    public Date getBuildingTime() {
-        return buildingTime;
+    public String getBuildingTime() {
+
+        if(buildingTime==null){
+            return null;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(buildingTime);
     }
 
     public void setBuildingTime(Date buildingTime) {
@@ -238,8 +395,12 @@ public class SellHouseResource {
         this.monthlyPayments = monthlyPayments;
     }
 
-    public Date getReleaseTime() {
-        return releaseTime;
+    public String getReleaseTime() {
+        if(releaseTime==null){
+            return null;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(releaseTime);
     }
 
     public void setReleaseTime(Date releaseTime) {

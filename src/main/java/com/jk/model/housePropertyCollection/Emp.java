@@ -1,9 +1,11 @@
 package com.jk.model.housePropertyCollection;
 
-public class Emp {
+import java.io.Serializable;
+
+public class Emp implements Serializable {
     private String id;
 
-    private String name;
+    private String username;
 
     private String weixin;
 
@@ -23,12 +25,12 @@ public class Emp {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getWeixin() {

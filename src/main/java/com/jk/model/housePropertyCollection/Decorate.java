@@ -1,9 +1,11 @@
 package com.jk.model.housePropertyCollection;
 
-public class Decorate {
+import java.io.Serializable;
+
+public class Decorate implements Serializable {
     private String id;
 
-    private String name;
+    private String decoratename;
 
     public String getId() {
         return id;
@@ -13,11 +15,11 @@ public class Decorate {
         this.id = id == null ? null : id.trim();
     }
 
-    public String getName() {
-        return name;
+    public String getDecoratename() {
+        return decoratename;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setDecoratename(String decoratename) {
+        this.decoratename = decoratename;
     }
 }
